@@ -74,10 +74,10 @@ var app = {
 	},
 
 	grabarDatos: function(){
-		windows.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, this.gotFS, this.fail);
+		window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, this.gotFS, this.fail);
 	},
 
-	gotFS: function(){
+	gotFS: function(fileSystem){
 		fileSystem.getFile("files/"+"model.json", {create: true, exclusive: false}, app.gotFileEntry, app.fail);
 	},
 
